@@ -24,8 +24,7 @@ pipeline {
 		stage('Docker image run') {
 			steps{
 				sh 'docker build -t java-test-hello .'
-				sh 'docker service create --name helloworldjava -p 8888:8888 --constraint 'node.labels.type == worker' java-test-hello
-				'
+				sh 'docker service create --name helloworldjava -p 8888:8888 --constraint 'node.labels.type == worker' java-test-hello'
 			}
 		}   
 	}

@@ -1,0 +1,6 @@
+target/test-classes/com/example/javamavenjunithelloworld/HelloTest.class
+.project
+target/classes/com/example/javamavenjunithelloworld/Hello.class
+target/classes/com/example/javamavenjunithelloworld/HelloApp.class
+target/test-classes/com/example/javamavenjunithelloworld/HelloAppTest.class
+target/test-classes/com/example/javamavenjunithelloworld/HelloWithTestsIT.class
