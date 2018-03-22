@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools {
         maven '3.5.3'
-		docker 'default'
     }
 	stages {
         stage('Build'){
@@ -25,7 +24,8 @@ pipeline {
 		stage('Docker image run') {
 			steps{
 				sh 'docker build -t java-test-hello .'
-				sh 'docker image tag javatest host03:6000/test'
+				sh 'docker tag java-test-hello host03:6000/test'
+				sh 'docker push host03:5000/test'
 				sh "docker service create --name helloworldjava -p 8888:8888 --constraint 'node.labels.type == worker' java-test-hello"
 			}
 		}   
